@@ -1,0 +1,31 @@
+# Redis - comandos basicos y ejemplos
+# STRING - contador
+SET service:1:visits 0
+INCR service:1:visits
+GET service:1:visits
+
+# HASH - session temporal
+HSET session:abc user_id 1 status active
+EXPIRE session:abc 3600
+HGETALL session:abc
+
+# LIST - cola de turnos
+LPUSH queue:appointments "appointment:1"
+LPUSH queue:appointments "appointment:2"
+LRANGE queue:appointments 0 -1
+RPOP queue:appointments
+
+# SET - usuarios online
+SADD online_users 1
+SADD online_users 2
+SMEMBERS online_users
+
+# ZSET - prioridad
+ZADD ticket_priority 100 "ticket:10"
+ZADD ticket_priority 50 "ticket:11"
+ZRANGE ticket_priority 0 -1 WITHSCORES
+
+# TTL example
+SET temp:key "value"
+EXPIRE temp:key 120
+TTL temp:key

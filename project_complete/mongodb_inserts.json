@@ -1,0 +1,22 @@
+[
+  {
+    "user_id": 1,
+    "bio": "Ana, amante del cafe y la tecnologia.",
+    "preferences": {"notifications": true, "lang": "es"},
+    "addresses": [{"label":"Casa","street":"Calle 1","city":"Bogota"}],
+    "social_links": ["https://github.com/ana"],
+    "created_at": {"$date": "2025-12-01T10:00:00Z"}
+  },
+  {
+    "user_id": 1,
+    "events": [
+      {"type":"login","timestamp": {"$date":"2025-12-01T10:00:00Z"}, "metadata": {}},
+      {"type":"reservation","timestamp": {"$date":"2025-12-01T11:00:00Z"}, "metadata": {"appointment_id": 1}}
+    ]
+  },
+  {
+    "owner_id": 2,
+    "type": "invoice",
+    "content": {"amount": 40, "currency": "USD", "items": [{"name":"Limpieza facial", "price": 40}]}
+  }
+]

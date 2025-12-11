@@ -1,0 +1,6 @@
+# Operaciones y estructuras usadas en el proyecto
+- STRING: service:{id}:visits -> contador de visitas por servicio.
+- LIST: queue:appointments -> cola de turnos; producers usan LPUSH, workers usan RPOP.
+- HASH: session:{token} -> datos de sesión con EXPIRE para TTL.
+- SET: online_users -> conjunto de usuarios actualmente conectados.
+- ZSET: ticket_priority -> prioridad de tickets para procesar (score = prioridad).
